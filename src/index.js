@@ -1,10 +1,24 @@
 import RoleText from './RoleText.vue'
 
+const DEFAULT_STORAGE_KEY = 'roleTextRole'
+
 function install(Vue, options = {}) {
-  const { messages = {} } = options
+  const { messages = {}, storageKey = DEFAULT_STORAGE_KEY } = options
+
+  function readStoredRole() {
+    return localStorage.getItem(storageKey)
+  }
+
+  function persistRole(role) {
+    if (role == null || role === '') {
+      localStorage.removeItem(storageKey)
+      return
+    }
+    localStorage.setItem(storageKey, role)
+  }
 
   const state = Vue.observable({
-    role: null,
+    role: readStoredRole(),
     messages,
   })
 
@@ -15,10 +29,11 @@ function install(Vue, options = {}) {
 
   $rt.setRole = function (role) {
     state.role = role
+    persistRole(role)
   }
 
-  $rt.setMessages = function (messages) {
-    state.messages = messages
+  $rt.setMessages = function (nextMessages) {
+    state.messages = nextMessages
   }
 
   Object.defineProperty(Vue.prototype, '$rt', {
