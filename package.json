@@ -1,0 +1,36 @@
+{
+  "name": "vue-role-text",
+  "version": "1.0.0",
+  "description": "Vue 2 plugin to render text by role type, similar to i18n",
+  "type": "module",
+  "main": "dist/vue-role-text.cjs.js",
+  "module": "dist/vue-role-text.esm.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "vue",
+    "vue2",
+    "role",
+    "i18n",
+    "plugin"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^2.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "rollup": "^4.61.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-vue": "^5.1.9"
+  }
+}
