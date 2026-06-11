@@ -1,6 +1,6 @@
 {
   "name": "vue-role-text",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue 2 plugin to render text by role type, similar to i18n",
   "type": "module",
   "main": "dist/vue-role-text.cjs.js",
